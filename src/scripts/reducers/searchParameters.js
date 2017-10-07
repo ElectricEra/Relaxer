@@ -1,6 +1,6 @@
-const theme = (state = [], action) => {
+const theme = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_SEARCH_PARAMETERS':
+    case 'ADD_USER_PREFERANCES':
       return action.data
     default:
       return state
