@@ -25,12 +25,18 @@ function getHostsData(data) {
 }
 
 export const getHosts = () => {
-	return (dispatch) => {
+  return (dispatch) => {
     axios.get('/getNews').then(
       (response) => {
-  		  console.log(response);
         dispatch(getHostsData(response.data));
       },
     )
-  }	
+  }
+}
+
+export const updateStoreWithHosts = (data) => {
+  return {
+    type: 'ADD_NEWS_TO_STORE',
+    data
+  }
 }

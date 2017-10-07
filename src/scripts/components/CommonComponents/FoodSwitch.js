@@ -8,12 +8,14 @@ class FoodSwitch extends React.Component {
 
   render() {
     return (
-      <div className="switch">
-        <label>
-          {this.props.title}
-          <input type="checkbox" id="food-checker"/>
-          <span className="lever"></span>
-        </label>
+      <div className="row">
+        <div className="switch">
+          <label>
+            {this.props.title}
+            <input type="checkbox" id="food-checker"/>
+            <span className="lever"></span>
+          </label>
+        </div>
       </div>
     )
   }

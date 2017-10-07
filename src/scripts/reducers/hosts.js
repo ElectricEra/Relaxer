@@ -1,7 +1,7 @@
 const theme = (state = [], action) => {
   switch (action.type) {
-    case 'GET_HOSTS':
-      return action.hostList
+    case 'ADD_NEWS_TO_STORE':
+      return action.data
     default:
       return state
   }
