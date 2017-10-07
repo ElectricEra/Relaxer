@@ -17,6 +17,7 @@ import UserSearch from './components/User/UserSearch'
 import Header from './components/HeaderFooter/Header'
 import Footer from './components/HeaderFooter/Footer'
 import Home from  './components/Home/Home'
+import HostProfileComponent from  './components/HostFieldsComponent/HostProfileComponent'
 
 const $app = document.getElementById('app')
 
