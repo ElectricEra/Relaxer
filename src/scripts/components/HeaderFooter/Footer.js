@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-import FormComponent from "../CommonComponents/FormComponent";
-
 class Footer extends React.Component {
   constructor(props) {
     super(props);
