@@ -7,10 +7,10 @@ class SmallCardComponent extends React.Component {
 
   render() {
     return (
-      <div className="col s12 m6">
+      <div className="col s12 m12">
           <div className="card horizontal">
             <div className="card-image">
-              <img className='card-img' src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
+              <img className='card-img responsive-img rlx-host-image' src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg"/>
             </div>
             <div className="card-stacked">
               <div className="card-content">

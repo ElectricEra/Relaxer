@@ -11,7 +11,7 @@ class Header extends React.Component {
 		<nav>
 		    <div className="nav-wrapper">
 		        <Link to='/'><span className="brand-logo">Logo</span></Link>
-		        <ul id="nav-mobile" className="right hide-on-med-and-down">
+		        <ul id="nav-mobile" className="right hide-on-small-only">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
 		            <li><Link to='/sign-in'>Sign in</Link></li>
