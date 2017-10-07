@@ -1,5 +1,7 @@
 import React from 'react'
 
+import HostProfileCompoment from '../HostFieldsComponent/HostProfileComponent';
+
 class SmallCardComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,16 @@ class SmallCardComponent extends React.Component {
   }
 
   render() {
+    var d1 = new Date(this.props.host.dates[0]);
+    var d1d = {}
+    d1d.year = d1.getFullYear();
+    d1d.month = d1.getMonth()+1;
+    d1d.date = d1.getDate()+1;
+    var d2 = new Date(this.props.host.dates[1]);
+    var d2d = {}
+    d2d.year = d2.getFullYear();
+    d2d.month = d2.getMonth()+1;
+    d2d.date = d2.getDate()+1;
     return (
       <div className="col s12 m12">
           <div className="card horizontal">
@@ -25,19 +37,20 @@ class SmallCardComponent extends React.Component {
             </div>
             <div className="card-stacked">
               <div className="card-content">
-                <h5>Description:</h5>
-                <p>{this.props.host.description}</p>
+                <h5>Activities:</h5>
+                <p>{this.props.host.activities.join(", ")}</p>
                 <h5>Location:</h5>
                 <p>{this.props.host.location}</p>
                 <h5>Price:</h5>
                 <p>{this.props.host.price}</p>
+                <h5>Dates:</h5>
+                <p>{`${d1d.date}.${d1d.month}.${d1d.year} - ${d2d.date}.${d2d.month}.${d2d.year}`}</p>
               </div>
               <div className="card-action">
-              <a className="waves-effect waves-light btn modal-trigger" href='#modal1'>More Details</a>
-                <div id="modal1" className="modal modal-fixed-footer">
+              <a className="waves-effect waves-light btn modal-trigger" href={'#modal'+this.props.host.key}>More Details</a>
+                <div id={"modal"+this.props.host.key} className="modal modal-fixed-footer">
                   <div className="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
+                    <HostProfileCompoment host={this.props.host} />
                   </div>
                   <div className="modal-footer">
                     <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest}>Send request!</a>
