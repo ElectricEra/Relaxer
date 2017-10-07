@@ -2,7 +2,11 @@
 @import './shared';
 
 .blue-background {
-	background: #2D4571;
+	background-color: #2D4571;
+}
+
+.blue-background:hover {
+	background-color: rgb(87, 106, 141);
 }
 
 body {
@@ -40,12 +44,12 @@ nav {
 
 
 	& p {
-		font-size: 2.5vw;
+		font-size: calc(2vw + 10px);
 		margin-bottom: 20px;
 	}
 
 	& ul {
-		font-size: 2vw;
+		font-size: calc(1.5vw + 10px);
 
 		&>li {
 			list-style-type: disc;
@@ -55,17 +59,19 @@ nav {
 	&__buttons {
 
 		margin-top: 30px;
+		display: flex;
+		flex-direction: column;
 
 		& a {
 
 			// background-color: #ee6e73;
 
 			&:hover {
-				background-color: #ee6e73!important;
+				background-color: rgb(87, 106, 141);
 			}
 
 			&:first-child {
-				margin-right: 20px;
+				margin-bottom: 20px;
 			}
 		}
 
@@ -76,6 +82,6 @@ nav {
     padding: 0px 10px 0px 10px; 
 }
 .nav-item:hover {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgb(87, 106, 141);
     cursor: pointer;
 }
