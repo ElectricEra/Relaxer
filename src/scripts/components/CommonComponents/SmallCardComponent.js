@@ -15,12 +15,14 @@ class SmallCardComponent extends React.Component {
             <div className="card-stacked">
               <div className="card-content">
                 <h5>Description:</h5>
-                <p>{this.props.description}</p>
+                <p>{this.props.host.description}</p>
                 <h5>Location:</h5>
-                <p>{this.props.location}</p>
+                <p>{this.props.host.location}</p>
+                <h5>Price:</h5>
+                <p>{this.props.host.price}</p>
               </div>
               <div className="card-action">
-                <a href="#">Details</a>
+                <a href="#">More Details</a>
               </div>
             </div>
           </div>
