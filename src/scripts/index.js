@@ -30,7 +30,7 @@ ReactDOM.render(
 		<Router>
 		    <div>
 				<Header />
-				<Route exact path="/" component={Home} />
+				<Route exact path="/" component={HostProfileComponent} />
 				<Route path="/app" component={UserSearch} />
 				<Route path="/host" component={HostListComponent} />
 				<Route path="/sign-in" component={SignInComponent} />
