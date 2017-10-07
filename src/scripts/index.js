@@ -9,11 +9,12 @@ import { browserHistory } from 'react-router'
 
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
-import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComponent'
+import HostListComponent from './components/CommonComponents/HostListComponent'
 import SignInComponent from './components/SignIn/SignInComponent'
 import UserSearch from './components/User/UserSearch'
 import Header from './components/HeaderFooter/Header'
 import Footer from './components/HeaderFooter/Footer'
+import Home from  './components/Home/Home'
 
 const $app = document.getElementById('app')
 
@@ -24,9 +25,9 @@ ReactDOM.render(
 		<Router>
 		    <div>
 				<Header />
-				<Route exact path="/" component={AppContainer} />
+				<Route exact path="/" component={Home} />
 				<Route path="/app" component={UserSearch} />
-				<Route path="/host" component={HostFieldsComponent} />
+				<Route path="/host" component={HostListComponent} />
 				<Route path="/sign-in" component={SignInComponent} />
 				<Footer />
 			</div>

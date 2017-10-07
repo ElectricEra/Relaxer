@@ -1,5 +1,6 @@
 import React from 'react'
 import SmallCardComponent from "./SmallCardComponent";
+import { BasicWrapper } from "./BasicWrapperComponent";
 
 let host = {
   "description": 'I will show you best shores of our great location, I know a lot of pubs and bars and I know where are the parties every night!',
@@ -15,13 +16,13 @@ class HostListComponent extends React.Component {
 
   render() {
     return (
-        <div className="col s12 m12">
+        <BasicWrapper>
             <input type="text" placeholder="Country"/>
             <SmallCardComponent host={host}/>
             <SmallCardComponent host={host}/>
             <SmallCardComponent host={host}/>
             <SmallCardComponent host={host}/>
-        </div>
+        </BasicWrapper>
     )
   }
 }
