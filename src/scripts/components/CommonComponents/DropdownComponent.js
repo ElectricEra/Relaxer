@@ -16,7 +16,7 @@ class DropdownComponent extends React.Component {
   render() {
     return (
       <div>
-        <div className={this.props.classList}>
+        <div className={this.props.classList || ''}>
           <select className="select">
             {this.renderList()}
           </select>

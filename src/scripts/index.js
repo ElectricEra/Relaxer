@@ -24,7 +24,7 @@ ReactDOM.render(
 		    <div>
 				<Header />
 				<Route exact path="/" component={AppContainer} />
-				<Route path="/app" component={HostFieldsComponent} />
+				<Route path="/app" component={UserSearch} />
 				<Route path="/host" component={HostFieldsComponent} />
 				<Footer />
 			</div>
