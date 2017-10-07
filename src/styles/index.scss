@@ -37,7 +37,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 
 	& p {
 		font-size: 2.5vw;
@@ -51,13 +51,13 @@ nav {
 			list-style-type: disc;
 		}
 	}
-	
+
 	&__buttons {
 
 		margin-top: 30px;
 
 		& a {
-			
+
 			// background-color: #ee6e73;
 
 			&:hover {
@@ -69,6 +69,13 @@ nav {
 			}
 		}
 
-		
+
 	}
+}
+.nav-item {
+    padding: 0px 10px 0px 10px; 
+}
+.nav-item:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
 }
