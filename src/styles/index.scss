@@ -40,6 +40,19 @@ nav {
 	& li div p {
 		padding: 0 20px;
 	}
+
+}
+
+p.nav-item {
+	padding-left: 0px;
+
+	&:hover {
+		background-color: inherit;
+	}
+}
+
+.relaxer-text {
+	font-weight: bold;
 }
 
 .card-image {
