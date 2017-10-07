@@ -9,7 +9,8 @@ import { browserHistory } from 'react-router'
 
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
-import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComponent.js'
+import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComponent'
+import SignInComponent from './components/SignIn/SignInComponent'
 import UserSearch from './components/User/UserSearch'
 import Header from './components/HeaderFooter/Header'
 import Footer from './components/HeaderFooter/Footer'
@@ -24,8 +25,9 @@ ReactDOM.render(
 		    <div>
 				<Header />
 				<Route exact path="/" component={AppContainer} />
-				<Route path="/app" component={HostFieldsComponent} />
+				<Route path="/app" component={UserSearch} />
 				<Route path="/host" component={HostFieldsComponent} />
+				<Route path="/sign-in" component={SignInComponent} />
 				<Footer />
 			</div>
 		</Router>

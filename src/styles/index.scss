@@ -1,12 +1,8 @@
 @import './reset';
 @import './shared';
 
-body {
-  color: red;
-}
-
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%
 }
