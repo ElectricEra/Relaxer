@@ -5,7 +5,7 @@ class DropdownComponent extends React.Component {
     super(props)
   }
   componentDidMount() {
-    $('.' + this.props.id).material_select();
+    $('#' + this.props.id).material_select();
   }
 
   renderList() {
@@ -17,7 +17,7 @@ class DropdownComponent extends React.Component {
     return (
       <div className="row">
         <div className={this.props.classList || ''}>
-          <select className={this.props.id}>
+          <select id={this.props.id}>
             {this.renderList()}
           </select>
           <label>{this.props.title}</label>

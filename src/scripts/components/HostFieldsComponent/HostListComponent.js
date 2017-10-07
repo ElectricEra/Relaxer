@@ -45,7 +45,7 @@ class HostListComponent extends React.Component {
   render() {
     return (
         <BasicWrapper>
-        {console.log(this.state.hostList, this.props.hosts)}
+        {console.log(this.state.hostList, this.props)}
             <input type="text" placeholder="Country"/>
             {this.renderList()}
         </BasicWrapper>

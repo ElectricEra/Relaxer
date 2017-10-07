@@ -40,3 +40,11 @@ export const updateStoreWithHosts = (data) => {
     data
   }
 }
+
+export const addUserPreferances = (data) => {
+  console.log("3213")
+  return {
+    type: 'ADD_USER_PREFERANCES',
+    data
+  }
+}
