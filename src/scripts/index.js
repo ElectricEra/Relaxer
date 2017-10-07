@@ -10,6 +10,8 @@ import { browserHistory } from 'react-router'
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
 import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComponent.js'
+import UserSearch from './components/User/UserSearch'
+
 
 const $app = document.getElementById('app')
 
