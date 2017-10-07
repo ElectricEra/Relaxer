@@ -5,6 +5,8 @@ import UserFormComponent from "./UserFormComponent";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
+import { Link } from 'react-router-dom'
+
 import { addUserPreferances } from "../../actions/index"
 
 class UserSearch extends React.Component {
@@ -29,7 +31,6 @@ class UserSearch extends React.Component {
     }
 
     this.props.addUserPreferances(obj);
-    window.location.pathname="host"
   }
 
   render() {
@@ -40,8 +41,10 @@ class UserSearch extends React.Component {
         		<p className="user-find-header center-align">We will find you a trip</p>
         		<UserFormComponent />
             <div className="center-align">
-              <a className="waves-effect waves-light blue-background btn center-align"
-                 onClick={this.handleSubmit}>Find</a>
+              <Link to='/host'>
+              <div className="waves-effect waves-light blue-background btn center-align"
+                 onClick={this.handleSubmit}>Find</div>
+              </Link>
             </div>
         	</div>
         </div>
@@ -56,7 +59,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return {}
+  return { infoForHosts: state.infoForHosts }
 }
 
 UserSearch = connect(
