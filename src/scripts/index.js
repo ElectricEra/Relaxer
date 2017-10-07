@@ -9,6 +9,7 @@ import { browserHistory } from 'react-router'
 
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
+import UserSearch from './components/User/UserSearch'
 
 const $app = document.getElementById('app')
 
