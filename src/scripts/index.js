@@ -19,6 +19,7 @@ import Header from './components/HeaderFooter/Header'
 import Footer from './components/HeaderFooter/Footer'
 import Home from  './components/Home/Home'
 import HostProfileComponent from  './components/HostFieldsComponent/HostProfileComponent'
+import UserProfileComponent from './components/User/UserProfileComponent'
 
 const $app = document.getElementById('app')
 
@@ -36,6 +37,7 @@ ReactDOM.render(
 				<Route path="/app" component={UserSearch} />
 				<Route path="/host" component={HostListComponent} />
 				<Route path="/sign-in" component={SignInComponent} />
+                <Route path="/user" component={UserProfileComponent} />
 				<Footer />
 			</div>
 		</Router>

@@ -19,8 +19,11 @@ class SignInComponent extends React.Component {
       }.bind(this));
   }
 
+  goToProfile() {
+
+  }
+
   signIn() {
-      console.log('sign in');
     var provider = new firebase.auth.GoogleAuthProvider();
 
      firebase.auth().signInWithRedirect(provider).then(function(result) {
@@ -31,7 +34,6 @@ class SignInComponent extends React.Component {
   }
 
   signOut() {
-      console.log('sign out');
       firebase.auth().signOut();
   }
 
