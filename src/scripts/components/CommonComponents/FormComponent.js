@@ -9,11 +9,9 @@ class FormComponent extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <form className="col s12">
-          <div className="row">
+      <div className="row ">
+        <form>
             {this.props.children}
-          </div>
         </form>
       </div>
     )

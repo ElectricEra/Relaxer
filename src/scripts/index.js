@@ -21,7 +21,7 @@ ReactDOM.render(
   <Provider store={store}>
 	  <Router>
 	    <div>
-	      <Route exact path="/" component={AppContainer} />
+	      <Route exact path="/" component={HostFieldsComponent} />
     	  <Route path="/app" component={AppContainer} />
         <Route path="/host" component={HostFieldsComponent} />
 	  	</div>
