@@ -1,5 +1,7 @@
 import React from 'react'
 
+import HostProfileCompoment from '../HostFieldsComponent/HostProfileComponent';
+
 class SmallCardComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -36,8 +38,7 @@ class SmallCardComponent extends React.Component {
               <a className="waves-effect waves-light btn modal-trigger" href='#modal1'>More Details</a>
                 <div id="modal1" className="modal modal-fixed-footer">
                   <div className="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
+                    <HostProfileCompoment host={this.props.host} />
                   </div>
                   <div className="modal-footer">
                     <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest}>Send request!</a>
