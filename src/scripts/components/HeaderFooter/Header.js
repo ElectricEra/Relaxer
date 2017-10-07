@@ -16,7 +16,7 @@ class Header extends React.Component {
 		        <ul id="nav-mobile" className="right hide-on-small-only">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
-		            <li><SignInComponent/></li>
+		            <li><SignInComponent /></li>
 		        </ul>
 		    </div>
 		</nav>

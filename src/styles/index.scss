@@ -23,7 +23,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 
 	& p {
 		font-size: 2.5vw;
@@ -37,13 +37,13 @@ footer {
 			list-style-type: disc;
 		}
 	}
-	
+
 	&__buttons {
 
 		margin-top: 30px;
 
 		& a {
-			
+
 			// background-color: #ee6e73;
 
 			&:hover {
@@ -55,6 +55,13 @@ footer {
 			}
 		}
 
-		
+
 	}
+}
+.nav-item {
+    padding: 0px 10px 0px 10px; 
+}
+.nav-item:hover {
+    background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
 }

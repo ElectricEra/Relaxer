@@ -38,7 +38,7 @@ class SignInComponent extends React.Component {
   render() {
     return (
       <div>
-        {!this.state.isLogged ? <p onClick={this.signIn}>Sign In</p> : <p onClick={this.signOut}>Sign Out</p>}
+        {!this.state.isLogged ? <p onClick={this.signIn} className="nav-item">Sign In</p> : <p onClick={this.signOut} className="nav-item">Sign Out</p>}
       </div>
     )
   }
