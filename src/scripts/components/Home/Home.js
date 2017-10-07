@@ -17,8 +17,8 @@ export default class Home extends React.Component {
   				<li>Share and get experience worldwide</li>
   			</ul>
   			<div className="main-title__buttons">
-  				<Link className="waves-effect waves-light red lighten-1 btn" to='/app'>Find hosts</Link>
-  				<Link className="waves-effect waves-light red lighten-1 btn" to='/host'>Become a host</Link>
+  				<Link className="waves-effect waves-light blue-background lighten-1 btn" to='/app'>Find hosts</Link>
+  				<Link className="waves-effect waves-light blue-background lighten-1 btn" to='/host'>Become a host</Link>
   			</div>
   		</div>
   	)

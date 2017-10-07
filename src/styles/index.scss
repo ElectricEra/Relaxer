@@ -1,6 +1,10 @@
 @import './reset';
 @import './shared';
 
+.blue-background {
+	background: #2D4571;
+}
+
 body {
   color: rgba(0,0,0,0.7);
 }
@@ -9,10 +13,20 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-footer {
+footer.page-footer {
 	position: fixed;
 	bottom: 0;
-	width: 100%
+	width: 100%;
+	background: #2D4571;
+	padding-top: 0;
+}
+
+nav {
+	background: #2D4571;
+
+	& li div p {
+		padding: 0 20px;
+	}
 }
 
 .card-image {
