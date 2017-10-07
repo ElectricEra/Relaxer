@@ -40,6 +40,19 @@ nav {
 	& li div p {
 		padding: 0 20px;
 	}
+
+}
+
+p.nav-item {
+	padding-left: 0px;
+
+	&:hover {
+		background-color: inherit;
+	}
+}
+
+.relaxer-text {
+	font-weight: bold;
 }
 
 .card-image {
@@ -150,4 +163,23 @@ nav {
 nav .brand-logo i {
 	font-size: 55px;
   margin-left: 15px;
+}
+
+ul#slide-out {
+
+	width: 250px;
+
+	&:before {
+    display: block;
+    font-family: 'Material Icons';
+    content: 'beach_access';
+    color: black;
+    font-size: 55px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  & li>a {
+  	font-size: calc(2vw + 14px);
+  }
 }
