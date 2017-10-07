@@ -37,6 +37,8 @@ footer.page-footer {
 
 nav {
 	background: #2D4571;
+	position: fixed;
+    z-index: 5;
 
 	& li div p {
 		padding: 0 20px;
@@ -181,6 +183,6 @@ ul#slide-out {
   	}
 
   & li>a {
-  	font-size: calc(2vw + 14px);
+  	font-size: calc(1vw + 14px);
   }
 }

@@ -10,8 +10,8 @@ class Footer extends React.Component {
     return (
     <footer className="page-footer">
       <div className="footer-copyright">
-        <div className="container center-align">
-        © 2017 *Here could be your advertisment*
+        <div className="container">
+          © 2017 *Here could be your advertisment*
         </div>
       </div>
     </footer>
