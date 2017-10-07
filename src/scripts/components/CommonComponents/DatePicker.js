@@ -18,7 +18,7 @@ class DatePicker extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         <input id={this.props.id} type="text" className="datepicker" placeholder={this.props.title}/>
       </div>
     )
