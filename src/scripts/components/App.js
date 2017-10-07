@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
 import SampleComponent from './SampleComponent'
 
 
@@ -19,7 +20,7 @@ class App extends React.Component {
         <h1>This is my app component.</h1>
         <h2>Theme: {this.props.theme}</h2>
         <button onClick={this.toggleTheme.bind(this)}>
-          Change the Theme
+          <Link to='/app'>Change the Theme</Link>
         </button>
         <SampleComponent />
       </div>

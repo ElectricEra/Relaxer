@@ -2,9 +2,9 @@ import '../styles/index.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { Router, Route } from 'react-router-dom'
 import { browserHistory } from 'react-router'
 
 import reducers from './reducers'
@@ -16,9 +16,12 @@ let store = createStore(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
-  	<Router history={browserHistory}>
-    	<Route path='/' component={AppContainer} />
-  	</Router>
+	  <Router>
+	    <div>
+	      <Route exact path="/" component={AppContainer} />
+    	  <Route path="/app" component={AppContainer} />
+	  	</div>
+	  </Router>
   </Provider>,
   $app
 )
