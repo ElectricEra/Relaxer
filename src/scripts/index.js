@@ -7,9 +7,11 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { browserHistory } from 'react-router'
 
+import promiseMiddleware from 'redux-promise'
+
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
-import HostListComponent from './components/CommonComponents/HostListComponent'
+import HostListComponent from './components/HostFieldsComponent/HostListComponent'
 import SignInComponent from './components/SignIn/SignInComponent'
 import UserSearch from './components/User/UserSearch'
 import Header from './components/HeaderFooter/Header'
@@ -18,7 +20,9 @@ import Home from  './components/Home/Home'
 
 const $app = document.getElementById('app')
 
-let store = createStore(reducers)
+let store = createStore(reducers, {
+	promiseMiddleware
+})
 
 ReactDOM.render(
 	<Provider store={store}>
