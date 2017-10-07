@@ -1,10 +1,6 @@
 import React from 'react'
 import SmallCardComponent from "../CommonComponents/SmallCardComponent";
 import { BasicWrapper } from "../CommonComponents/BasicWrapperComponent";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
-import { getHosts } from '../../actions/index';
 
 let host = {
   "description": 'I will show you best shores of our great location, I know a lot of pubs and bars and I know where are the parties every night!',
@@ -14,38 +10,41 @@ let host = {
 
 class HostListComponent extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      hostList: []
+    }
   }
 
-  componentDidMount() {
-    this.props.getHosts();
+  componentDidMount(){
+    var hosts = firebase.database().ref('hosts/');
+    hosts.on('value', snapshot => {
+        var hostList = [];
+        for(let host in snapshot.val()) {
+            let obj = snapshot.val()[host];
+            obj.key = host;
+            obj.location = snapshot.val()[host].county;
+            hostList.push(obj);
+        }
+        this.setState({hostList:hostList});
+        console.log(this.state.hostList);
+    });
+  }
+
+  renderList() {
+      return this.state.hostList.map((el, index)=>{
+          return <SmallCardComponent host={el}/>
+      })
   }
 
   render() {
     return (
         <BasicWrapper>
             <input type="text" placeholder="Country"/>
-            {this.props.hosts && this.props.hosts.map(host => <SmallCardComponent host={host} />)}
+            {this.renderList()}
         </BasicWrapper>
     )
   }
 }
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getHosts
-  }, dispatch);
-}
-
-function mapStateToProps(state) {
-  return {
-    hosts: state.hosts
-  }
-}
-
-HostListComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HostListComponent)
 
 export default HostListComponent
