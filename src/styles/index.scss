@@ -44,14 +44,6 @@ nav {
 
 }
 
-p.nav-item {
-	padding-left: 0px;
-
-	&:hover {
-		background-color: inherit;
-	}
-}
-
 .relaxer-text {
 	font-weight: bold;
 }
@@ -168,17 +160,25 @@ nav .brand-logo i {
 
 ul#slide-out {
 
+	p.nav-item {
+    	padding-left: 0px;
+
+    	&:hover {
+    		background-color: inherit;
+    	}
+	}
+
 	width: 250px;
 
 	&:before {
-    display: block;
-    font-family: 'Material Icons';
-    content: 'beach_access';
-    color: black;
-    font-size: 55px;
-    text-align: center;
-    padding: 10px;
-  }
+	    display: block;
+	    font-family: 'Material Icons';
+	    content: 'beach_access';
+	    color: black;
+	    font-size: 55px;
+	    text-align: center;
+	    padding: 10px;
+  	}
 
   & li>a {
   	font-size: calc(2vw + 14px);
