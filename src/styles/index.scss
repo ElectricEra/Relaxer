@@ -2,11 +2,55 @@
 @import './shared';
 
 body {
-  color: red;
+  color: rgba(0,0,0,0.7);
+}
+
+#app {
+	font-family: 'Roboto', sans-serif;
 }
 
 footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%
+}
+
+.main-title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+
+	& p {
+		font-size: 2.5vw;
+		margin-bottom: 20px;
+	}
+
+	& ul {
+		font-size: 2vw;
+
+		&>li {
+			list-style-type: disc;
+		}
+	}
+	
+	&__buttons {
+
+		margin-top: 30px;
+
+		& a {
+			
+			// background-color: #ee6e73;
+
+			&:hover {
+				background-color: #ee6e73!important;
+			}
+
+			&:first-child {
+				margin-right: 20px;
+			}
+		}
+
+		
+	}
 }

@@ -13,6 +13,7 @@ import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComp
 import UserSearch from './components/User/UserSearch'
 import Header from './components/HeaderFooter/Header'
 import Footer from './components/HeaderFooter/Footer'
+import Home from  './components/Home/Home'
 
 const $app = document.getElementById('app')
 
@@ -23,7 +24,7 @@ ReactDOM.render(
 		<Router>
 		    <div>
 				<Header />
-				<Route exact path="/" component={AppContainer} />
+				<Route exact path="/" component={Home} />
 				<Route path="/app" component={HostFieldsComponent} />
 				<Route path="/host" component={HostFieldsComponent} />
 				<Footer />
