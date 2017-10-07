@@ -33,19 +33,24 @@ class HostListComponent extends React.Component {
         }
         this.props.updateStoreWithHosts(hostList);
         this.setState({hostList:hostList});
+        $(".loading").hide();
     });
   }
 
   renderList() {
-      return this.state.hostList.map((el, index)=>{
-          return <SmallCardComponent host={el}/>
-      })
+      let eventsToShow = [];
+      this.state.hostList.forEach((event, index)=>{
+        if(event.price < this.props.infoForHosts.price) {
+          eventsToShow.push(<SmallCardComponent key={index} host={event}/>)
+        }
+      });
+      return eventsToShow;
   }
 
   render() {
     return (
         <BasicWrapper>
-        {console.log(this.state.hostList, this.props)}
+          <div className="loading">Loading&#8230;</div>
             <input type="text" placeholder="Country"/>
             {this.renderList()}
         </BasicWrapper>
