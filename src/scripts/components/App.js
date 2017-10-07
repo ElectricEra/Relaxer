@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SampleComponent from './SampleComponent'
 
+import Home from './Home/Home'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,12 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div id='main' className={this.props.theme}>
-        <h1>This is my app component.</h1>
-        <h2>Theme: {this.props.theme}</h2>
-        <button onClick={this.toggleTheme.bind(this)}>
-          <Link to='/app'>Change the Theme</Link>
-        </button>
-        <SampleComponent />
+        <Home props={this.props} />
       </div>
     )
   }

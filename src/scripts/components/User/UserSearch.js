@@ -1,6 +1,6 @@
 import React from "react";
 
-import FormComponent from "../CommonComponents/FormComponent";
+import UserFormComponent from "./UserFormComponent";
 
 class UserSearch extends React.Component {
   constructor(props) {
@@ -10,11 +10,9 @@ class UserSearch extends React.Component {
   render() {
     return (
         <div className="col s12">
-          <FormComponent />
+          <UserFormComponent />
         </div>
     )}
 };
-
-
 
 export default UserSearch;
