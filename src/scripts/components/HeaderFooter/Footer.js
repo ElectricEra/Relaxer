@@ -11,8 +11,7 @@ class Footer extends React.Component {
     <footer className="page-footer">
       <div className="footer-copyright">
         <div className="container">
-        © 2017 *Here could be your advertisment*
-        <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2017 *Here could be your advertisment*
         </div>
       </div>
     </footer>
