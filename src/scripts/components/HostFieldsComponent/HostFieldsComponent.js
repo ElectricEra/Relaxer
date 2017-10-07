@@ -10,7 +10,7 @@ class HostFieldsComponent extends React.Component {
     return (
       <div>
         This is host compone
-        <DropdownComponent />
+        <DropdownComponent optionList={['Option1', 'Option2', 'Option3']} classList="input-field col s12" />
       </div>
     )
   }
