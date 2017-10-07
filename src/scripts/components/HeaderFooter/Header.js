@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
+import SignInComponent from "../SignIn/SignInComponent";
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -14,8 +16,8 @@ class Header extends React.Component {
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
-		            <li><Link to='/sign-in'>Sign in</Link></li>
-		      </ul>
+		            <li><SignInComponent/></li>
+		        </ul>
 		    </div>
 		</nav>
     )}
