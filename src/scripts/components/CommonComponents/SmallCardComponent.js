@@ -2,7 +2,18 @@ import React from 'react'
 
 class SmallCardComponent extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.sendRequest = this.sendRequest.bind(this);
+  }
+
+  componentDidMount(){
+    $(document).ready(function(){
+      $('.modal').modal();
+    });
+  }
+
+  sendRequest() {
+    console.log("Request sent!");
   }
 
   render() {
@@ -22,7 +33,17 @@ class SmallCardComponent extends React.Component {
                 <p>{this.props.host.price}</p>
               </div>
               <div className="card-action">
-                <a href="#">More Details</a>
+              <a className="waves-effect waves-light btn modal-trigger" href='#modal1'>More Details</a>
+                <div id="modal1" className="modal modal-fixed-footer">
+                  <div className="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                  </div>
+                  <div className="modal-footer">
+                    <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest}>Send request!</a>
+                    <a className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
