@@ -10,7 +10,10 @@
 }
 
 body {
-  color: rgba(0,0,0,0.7);
+	color: rgba(0,0,0,0.7);
+	background-image: url(http://ak7.picdn.net/shutterstock/videos/6165557/thumb/1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #app {
@@ -82,9 +85,9 @@ nav {
 	}
 }
 .nav-item {
-    padding: 0px 10px 0px 10px; 
+	padding: 0px 10px 0px 10px; 
 }
 .nav-item:hover {
-    background-color: rgb(87, 106, 141);
-    cursor: pointer;
+	background-color: rgb(87, 106, 141);
+	cursor: pointer;
 }
