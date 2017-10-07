@@ -9,7 +9,9 @@ import { browserHistory } from 'react-router'
 
 import reducers from './reducers'
 import AppContainer from './components/AppContainer'
+import HostFieldsComponent from './components/HostFieldsComponent/HostFieldsComponent.js'
 import UserSearch from './components/User/UserSearch'
+
 
 const $app = document.getElementById('app')
 
@@ -21,6 +23,7 @@ ReactDOM.render(
 	    <div>
 	      <Route exact path="/" component={AppContainer} />
     	  <Route path="/app" component={AppContainer} />
+        <Route path="/host" component={HostFieldsComponent} />
 	  	</div>
 	  </Router>
   </Provider>,
