@@ -4,16 +4,24 @@ class DropdownComponent extends React.Component {
   constructor(props) {
     super(props)
   }
+  componentDidMount() {
+    $('.select').material_select();
+  }
 
+  renderList() {
+    return this.props.optionList.map((el, index)=>{
+      return <option key={index} value={index}>{el}</option>
+    })
+  }
   render() {
     return (
       <div>
-        <a className='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-
-        <ul id='dropdown1' className='dropdown-content'>
-          <li><a>one</a></li>
-          <li><a>two</a></li>
-        </ul>
+        <div className={this.props.classList}>
+          <select className="select">
+            {this.renderList()}
+          </select>
+          <label>Materialize Select</label>
+        </div>
       </div>
     )
   }
