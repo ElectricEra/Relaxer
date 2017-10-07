@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
 		<nav>
 		    <div className="nav-wrapper">
-		        <Link to='/'><span href="#" className="brand-logo">Logo</span></Link>
+		        <Link to='/'><span className="brand-logo">Logo</span></Link>
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
