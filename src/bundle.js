@@ -162,7 +162,7 @@
 
 
 	// module
-	exports.push([module.id, "* {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  min-height: 100vh; }\n\n.dark {\n  background-color: black;\n  color: white; }\n\n.card-img {\n  height: 250px;\n  width: 250px; }\n\n.blue-background {\n  background-color: #2D4571; }\n\n.blue-background:hover {\n  background-color: #576a8d; }\n\nbody {\n  color: rgba(0, 0, 0, 0.7);\n  background-image: url(http://ak7.picdn.net/shutterstock/videos/6165557/thumb/1.jpg);\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n#app {\n  font-family: 'Roboto', sans-serif; }\n\nfooter.page-footer {\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  background: #2D4571;\n  padding-top: 0; }\n\nnav {\n  background: #2D4571; }\n  nav li div p {\n    padding: 0 20px; }\n\n.card-image {\n  width: 300px; }\n\n.main-title {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .main-title p {\n    font-size: calc(2vw + 10px);\n    margin-bottom: 20px; }\n  .main-title ul {\n    font-size: calc(1.5vw + 10px); }\n    .main-title ul > li {\n      list-style-type: disc; }\n  .main-title__header {\n    font-weight: bold; }\n  .main-title__buttons {\n    margin-top: 30px;\n    display: flex;\n    flex-direction: column; }\n    .main-title__buttons a:hover {\n      background-color: #576a8d; }\n    .main-title__buttons a:first-child {\n      margin-bottom: 20px; }\n\n.nav-item {\n  padding: 0px 10px 0px 10px; }\n\n.nav-item:hover {\n  background-color: #576a8d;\n  cursor: pointer; }\n", ""]);
+	exports.push([module.id, "* {\n  margin: 0;\n  padding: 0; }\n\nbody {\n  min-height: 100vh; }\n\n.dark {\n  background-color: black;\n  color: white; }\n\n.card-img {\n  height: 250px;\n  width: 250px; }\n\n.blue-background {\n  background-color: #2D4571; }\n\n.blue-background:hover {\n  background-color: #576a8d; }\n\nbody {\n  color: rgba(0, 0, 0, 0.7);\n  background-image: url(http://ak7.picdn.net/shutterstock/videos/6165557/thumb/1.jpg);\n  background-repeat: no-repeat;\n  background-size: cover; }\n\n#app {\n  font-family: 'Roboto', sans-serif; }\n\nfooter.page-footer {\n  position: fixed;\n  bottom: 0;\n  width: 100%;\n  background: #2D4571;\n  padding-top: 0; }\n\nnav {\n  background: #2D4571; }\n  nav li div p {\n    padding: 0 20px; }\n\n.card-image {\n  width: 300px; }\n\n.main-title {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .main-title p {\n    font-size: calc(2vw + 10px);\n    margin-bottom: 20px; }\n  .main-title ul {\n    font-size: calc(1.5vw + 10px); }\n    .main-title ul > li {\n      list-style-type: disc; }\n  .main-title__header {\n    font-weight: bold; }\n  .main-title__buttons {\n    margin-top: 30px;\n    display: flex;\n    flex-direction: column; }\n    .main-title__buttons a:hover {\n      background-color: #576a8d; }\n    .main-title__buttons a:first-child {\n      margin-bottom: 20px; }\n\n.nav-item {\n  padding: 0px 10px 0px 10px;\n  margin-right: 10px; }\n\n.nav-item:hover {\n  background-color: #576a8d;\n  cursor: pointer; }\n", ""]);
 
 	// exports
 
@@ -28814,6 +28814,17 @@
 	    type: 'CHANGE_THEME',
 	    theme: theme
 	  };
+	};
+
+	var getHosts = exports.getHosts = function getHosts() {
+	  var hosts = firebase.database().ref('hosts/');
+	  hosts.once('value', function (snapshot) {
+	    var hostList = snapshot.val();
+	    return {
+	      type: 'GET_HOSTS',
+	      hostList: hostList
+	    };
+	  });
 	};
 
 /***/ }),
