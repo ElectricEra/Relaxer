@@ -10,7 +10,11 @@ class UserSearch extends React.Component {
   render() {
     return (
         <div className="col s12">
-          <UserFormComponent />
+        	<div className="card-panel">
+        		<p className="user-find-header center-align">Enter some information</p>
+        		<p className="user-find-header center-align">We will find you a trip</p>
+        		<UserFormComponent />
+        	</div>
         </div>
     )}
 };

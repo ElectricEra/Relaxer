@@ -2,6 +2,11 @@ import React from "react";
 
 import InputComponent from "../CommonComponents/InputComponent";
 import DropdownComponent from "../CommonComponents/DropdownComponent";
+import DatePicker from "../CommonComponents/DatePicker";
+import ActivitiesComponent from "../CommonComponents/ActivitiesComponent";
+import FoodSwitch from "../CommonComponents/FoodSwitch";
+
+import { BasicWrapper } from "../CommonComponents/BasicWrapperComponent";
 
 class UserFormComponent extends React.Component {
   constructor(props) {
@@ -10,13 +15,14 @@ class UserFormComponent extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <form className="col s12">
-          <div className="row">
-            <InputComponent id="price" type="text" labelText="Pefdasfdrice" />
-            <DropdownComponent id="amountOfPeople" optionList={[1,2,3,4,5]} />
-          </div>
-        </form>
+      <div className="row user-form-component">
+        <BasicWrapper>
+          <InputComponent id="price" type="text" labelText="Price" />
+          <DropdownComponent title="Amount of travelers"  id="amountOfPeople" optionList={[1, 2, 3, 4, 5]} classList="input-field col s12" />
+          <DatePicker id="date-start" title="Start date"/>
+          <DatePicker id="date-end" title="End date"/>
+          <ActivitiesComponent activitiesList={["excursions", "trips", "parties", "local food", "museums"]}/>
+        </BasicWrapper>
       </div>
     )
   }
