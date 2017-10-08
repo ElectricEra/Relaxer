@@ -34,6 +34,10 @@ footer.page-footer {
 	background: #2D4571;
 	padding-top: 0;
 	z-index: 4;
+
+	.container {
+		text-align: center;
+	}
 }
 
 nav {
@@ -221,4 +225,10 @@ ul#slide-out {
 .try-again-txt {
 	text-align: center;
 	margin-top: 150px;
+}
+
+.modal-footer {
+	a {
+		color: white!important;
+	}
 }
