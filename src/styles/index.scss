@@ -11,7 +11,7 @@
 }
 
 nav ul a:hover {
-	background-color: rgb(87, 106, 141);	
+	background-color: rgb(87, 106, 141);
 }
 
 body {
@@ -189,6 +189,7 @@ ul#slide-out {
   }
 }
 
+
 #sidenav-overlay {
 	left: 250px;
 }
@@ -199,7 +200,7 @@ ul#slide-out {
 }
 
 .card.horizontal {
-	
+
 	.waves-effect {
 		background-color: #2d4571;
 
@@ -211,4 +212,13 @@ ul#slide-out {
 	.card-image {
 		border-right: 1px solid rgba(160,160,160,0.2);
 	}
+}
+
+.try-again-btn {
+	display: block;
+	margin: auto;
+}
+.try-again-txt {
+	text-align: center;
+	margin-top: 150px;
 }
