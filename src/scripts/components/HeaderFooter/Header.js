@@ -30,9 +30,7 @@ class Header extends React.Component {
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>Find a host</Link></li>
 		            <li><Link to='/host'>All hosts</Link></li>
-		            {
-                  this.renderProfileButton()
-                }
+		            { this.renderProfileButton() }
 		            <li><SignInComponent /></li>
 		        </ul>
 
@@ -40,9 +38,7 @@ class Header extends React.Component {
 			        <li><Link to='/'>Relaxer</Link></li>
 				    <li><Link to='/app'>Find a host</Link></li>
 		            <li><Link to='/host'>All hosts</Link></li>
-                {
-                  this.renderProfileButton()
-                }
+	                { this.renderProfileButton() }
 		            <li><a><SignInComponent /></a></li>
 				</ul>
 				<a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>

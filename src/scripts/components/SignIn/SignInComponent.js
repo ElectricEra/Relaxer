@@ -16,19 +16,23 @@ class SignInComponent extends React.Component {
   }
 
   componentDidMount(){
+      $('.modal').modal();
+      $('#modal1').modal('close');
+      if (this.props.userData) {
+        $(".loading").show();
+      }
       firebase.auth().onAuthStateChanged(function(user) {
-          console.log('statechanged')
           if (user) {
               this.setState({isLogged: true});
           } else {
               this.setState({isLogged: false});
           }
           this.props.addUserData(user);
-      }.bind(this));
-  }
-
-  goToProfile() {
-
+          $(".loading").hide();
+      }.bind(this), function(error) {
+        $(".loading").hide();
+        $('#error').modal('open');
+      })
   }
 
   signIn() {
@@ -48,6 +52,16 @@ class SignInComponent extends React.Component {
   render() {
     return (
       <div>
+        <div id="modal1" className="modal bottom-sheet">
+          <div className="modal-content">
+            <h4>Login error</h4>
+            <p>Try again a bit later</p>
+          </div>
+          <div className="modal-footer">
+            <a className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+        <div className="loading">Loading&#8230;</div>
         {!this.state.isLogged ? <p onClick={this.signIn} className="nav-item">Sign In</p> : <p onClick={this.signOut} className="nav-item">Sign Out</p>}
       </div>
     )
