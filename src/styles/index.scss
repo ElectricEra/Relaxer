@@ -19,6 +19,8 @@ body {
 	background-image: url("https://photos-6.dropbox.com/t/2/AADqNetodU02hxQfDdMUy1gKtSKQbDqhzSKALA2E3vItSA/12/388023537/jpeg/32x32/3/1507449600/0/2/road.jpg/EKib3osDGNJmIAcoBw/-pZXobDAWREPzXwjEUbkrV_SFpuet1WMq4nkubuNF3c?dl=0&size=1280x960&size_mode=3");
 	background-repeat: no-repeat;
 	background-size: cover;
+	padding-bottom: 50px;
+	min-height: 82vh;
 }
 
 #app {
@@ -87,10 +89,11 @@ nav {
 		margin-bottom: 20px;
 	}
 
-	& ul {
+	div.row {
 		font-size: calc(1.5vw + 10px);
+		text-align: center;
 
-		&>li {
+		.col {
 			list-style-type: disc;
 			color: #fff;
 		}
@@ -105,7 +108,7 @@ nav {
 
 	&__buttons {
 
-		margin-top: 30px;
+		margin-top: 15px;
 		display: flex;
 		flex-direction: column;
 
@@ -249,4 +252,8 @@ ul#slide-out {
 .login-message {
 	color: #fff;
 	margin-top: 150px;
+}
+.ico-text-home {
+	font-size: 20px;
+	line-height: 20px;
 }
