@@ -36,7 +36,7 @@ class HostProfileComponent extends React.Component {
             <p className="host-profile-page__name">
               <span>{this.props.host.name}</span>
             </p>
-            <div className="host-profile-page__img"><img src="http://lorempixel.com/600/300/" alt=""/></div>
+            <div className="host-profile-page__img"><img  src={`https://randomuser.me/api/portraits/${this.props.host.gender === 'male' ? 'men' : 'women'}/${this.props.randIndex}.jpg`} alt=""/></div>
 
             <div className="host-profile-page__rating">
               {this.renderRatingStars(this.props.host.rating)}

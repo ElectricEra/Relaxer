@@ -29,11 +29,12 @@ class SmallCardComponent extends React.Component {
     d2d.year = d2.getFullYear();
     d2d.month = d2.getMonth()+1;
     d2d.date = d2.getDate()+1;
+    var randIndex = Math.floor(Math.random()*60);
     return (
       <div className="col s12 m12">
           <div className="card horizontal">
             <div className="card-image">
-              <img className='card-img responsive-img rlx-host-image' src={this.props.host.picture} />
+              <img className='card-img responsive-img rlx-host-image' src={`https://randomuser.me/api/portraits/${this.props.host.gender === 'male' ? 'men' : 'women'}/${randIndex}.jpg`} />
               <h5 className="small-name">{this.props.host.name}</h5>
             </div>
             <div className="card-stacked">
@@ -51,7 +52,7 @@ class SmallCardComponent extends React.Component {
               <a className="waves-effect waves-light btn modal-trigger" href={'#modal'+this.props.host.key}>More Details</a>
                 <div id={"modal"+this.props.host.key} className="modal modal-fixed-footer">
                   <div className="modal-content">
-                    <HostProfileCompoment host={this.props.host} />
+                    <HostProfileCompoment host={this.props.host} randIndex={randIndex} />
                   </div>
                   <div className="modal-footer">
                     <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest}>Send request!</a>
