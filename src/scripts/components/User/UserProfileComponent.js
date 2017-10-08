@@ -11,15 +11,13 @@ import { bindActionCreators } from 'redux'
 
 import { addUserData } from "../../actions/index"
 
+import { Link } from 'react-router-dom'
+
 import { BasicWrapper } from "../CommonComponents/BasicWrapperComponent";
 
 class UserProfileComponent extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  saveHandler() {
-    console.log("Saved!");
   }
 
   render() {
@@ -34,10 +32,10 @@ class UserProfileComponent extends React.Component {
             <img src={photoURL} className="responsive-img"/>
             <h5>{name}</h5>
             <h5>{email}</h5>
-            <DatePicker id="bd" title="Birth Date" />
             <div className="center-align">
-              <div className="waves-effect waves-light blue-background btn center-align"
-                 onClick={this.saveHandler}>Save</div>
+              <Link to="/become-a-host">
+              <div className="waves-effect waves-light blue-background btn center-align">Become a host</div>
+              </Link>
             </div>
         </div> : <div className="center-align"><h3>Seems like you are not logged in.</h3></div> : <div />}
         </BasicWrapper>

@@ -22,23 +22,33 @@ class AddHostComponent extends React.Component {
 
   componentDidMount() {
     var hosts = firebase.database().ref('hosts/');
+    $('.modal').modal();
   }
 
   handleSubmit() {
+    var a = new Date($('#date-start').val())
+    var b = new Date($('#date-end').val())   
     var obj = {
       price: $('#price').val(),
-      amountOfPeople: +$('#amountOfPeople').val() + 1,
-      dateStart: $('#date-start').val(), 
-      dateEnd: $('#date-end').val(),
-      filled: [
+      living: +$('#amountOfPeople').val() + 1,
+      dates: [a.toISOString(), b.toISOString()],
+      activities: [
         $('#filled-in-box0').prop('checked') ? 'trips' : undefined,
         $('#filled-in-box1').prop('checked') ? 'sport' : undefined,
         $('#filled-in-box2').prop('checked') ? 'art' : undefined,
         $('#filled-in-box3').prop('checked') ? 'parties' : undefined,
         $('#filled-in-box4').prop('checked') ? 'local cuisine' : undefined
-      ]
+      ].filter(a=>!!a),
+      gender: $('#gender').val() === 0 ? 'male' : 'female',
+      county: $('#country').val(),
+      email: $('#email').val(),
+      name: $('#name').val(),
+      food:$('#food-checker').prop('checked'),
+      rating: 3,
+      picture: this.props.userData.photoURL
     }
-    console.log(obj);
+    var hosts = firebase.database().ref('hosts/');
+    hosts.push(obj);
   }
 
   render() {
@@ -49,10 +59,11 @@ class AddHostComponent extends React.Component {
           <p className="user-find-header center-align">We will register you as a travel host</p>
           <div className="row user-form-component">
             <BasicWrapper>
-              <InputComponent id="price" type="text" labelText="How much do you want for your trip?" />
+              <InputComponent id="name" type="text" labelText="Your name?" />
               <DropdownComponent title="Amount of travelers you can host"  id="amountOfPeople" optionList={[1, 2, 3, 4, 5]} classList="input-field col s12" />
               <DatePicker id="date-start" title="Start date"/>
               <DatePicker id="date-end" title="End date"/>
+              <InputComponent id="price" type="text" labelText="Your name?" />
               <ActivitiesComponent activitiesList={["trips", "sport", "art", "parties", "local cuisine"]}/>
               <DropdownComponent title="Your gender"  id="gender" optionList={['male', 'female']} classList="input-field col s12" />
               <InputComponent id="country" type="text" labelText="Your country" />
@@ -61,8 +72,17 @@ class AddHostComponent extends React.Component {
             </BasicWrapper>
           </div>
           <div className="center-align">
-            <div className="waves-effect waves-light blue-background btn center-align"
-               onClick={this.handleSubmit}>Find</div>
+            <a className="waves-effect waves-light blue-background btn center-align modal-trigger" 
+               onClick={this.handleSubmit} href="#modal1">Find</a>
+          </div>
+          <div id="modal1" className="modal">
+            <div className="modal-content center-align">
+              <h4>Thanks for becoming a host</h4>
+              <p>We hope you will have a great time!</p>
+            </div>
+            <div className="modal-footer">
+              <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
           </div>
         </div>
       </div>
@@ -78,7 +98,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    hosts: state.hosts
+    hosts: state.hosts,
+    userData: state.userData
   }
 }
 
