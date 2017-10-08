@@ -15,15 +15,14 @@ nav ul a:hover {
 }
 
 body {
-	color: rgba(0,0,0,0.7);
-	background-image: url(http://ak7.picdn.net/shutterstock/videos/6165557/thumb/1.jpg);
+	color: #000;
+	background-image: url("https://photos-6.dropbox.com/t/2/AADqNetodU02hxQfDdMUy1gKtSKQbDqhzSKALA2E3vItSA/12/388023537/jpeg/32x32/3/1507449600/0/2/road.jpg/EKib3osDGNJmIAcoBw/-pZXobDAWREPzXwjEUbkrV_SFpuet1WMq4nkubuNF3c?dl=0&size=1280x960&size_mode=3");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 #app {
 	font-family: 'Roboto', sans-serif;
-	margin-bottom: 50px;
 	margin-top: 75px;
 }
 
@@ -93,10 +92,15 @@ nav {
 
 		&>li {
 			list-style-type: disc;
+			color: #fff;
 		}
 	}
 	&__header {
 		font-weight: bold;
+		color: #fff;
+	}
+	&__descr {
+		color: #fff;
 	}
 
 	&__buttons {
