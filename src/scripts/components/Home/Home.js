@@ -28,7 +28,7 @@ class Home extends React.Component {
     var linkRedir = (this.props.userData && this.props.userData.email) ? '/become-a-host' : '/';
   	return (
   		<div className="main-title container">
-  			<h1 className="main-title__header">Relaxer</h1>
+  			<h1 className="main-title__header">JourneyEye</h1>
   			<p className="main-title__descr">Your only choice to find best variants for your trips</p>
   			<div className="row">
   				<div className="col l4 m6 s12">

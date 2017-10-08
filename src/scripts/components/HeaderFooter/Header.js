@@ -26,7 +26,7 @@ class Header extends React.Component {
 		<nav>
       {console.log(this.props.userData)}
 		    <div className="nav-wrapper">
-		        <Link to='/'><span className="brand-logo"><i className="material-icons">beach_access</i></span></Link>
+		        <Link to='/'><span className="brand-logo"><i className="material-icons">remove_red_eye</i></span></Link>
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>Find a host</Link></li>
 		            <li><Link to='/host'>All hosts</Link></li>
@@ -35,7 +35,7 @@ class Header extends React.Component {
 		        </ul>
 
 		        <ul id="slide-out" className="side-nav" onClick={$('.button-collapse').sideNav('hide')}>
-			        <li><Link to='/'>Relaxer</Link></li>
+			        <li><Link to='/'>JourneyEye</Link></li>
 				    <li><Link to='/app'>Find a host</Link></li>
 		            <li><Link to='/host'>All hosts</Link></li>
 	                { this.renderProfileButton() }
