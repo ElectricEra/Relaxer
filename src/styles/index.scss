@@ -262,11 +262,7 @@ ul#slide-out {
 	padding: 0;
     height: 26%;
 
-    .modal.modal-fixed-footer .modal-content {
-    	height: inherit;
+    &.modal.modal-fixed-footer .modal-content {
+		height: 100%
     }
-}
-
-.modal.modal-fixed-footer .modal-content {
-	height: 100%
 }

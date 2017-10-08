@@ -30,7 +30,6 @@ class HostProfileComponent extends React.Component {
     return (
         <div className="host-profile-page">
         <div className="row">
-        {console.log(this.props.host)}
           <div className="col l2 m1 s0"></div>
           <div className="col l8 m10 s12">
             <p className="host-profile-page__name">

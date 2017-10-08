@@ -50,8 +50,6 @@ class HostListComponent extends React.Component {
 
   renderList() {
       let eventsToShow = [];
-      console.log("Info: ", this.props.infoForHosts);
-      console.log("Hosts: ", this.state.hostList);
       if(!Object.keys(this.props.infoForHosts).length) {
         this.state.hostList.forEach((event, index)=>{
             eventsToShow.push(<SmallCardComponent key={index} host={event}/>)
