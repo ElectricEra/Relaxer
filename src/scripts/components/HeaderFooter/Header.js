@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 import SignInComponent from "../SignIn/SignInComponent";
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -20,6 +23,10 @@ class Header extends React.Component {
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
+		            {console.log(this.props.currentUser,"sadfsdfds")}
+		            {this.props.userData.currentUser ? 
+		               <li><Link to='/user'>Profile</Link></li> : <li />
+		            }
 		            <li><SignInComponent /></li>
 		        </ul>
 
@@ -27,6 +34,8 @@ class Header extends React.Component {
 			        <li><Link to='/'>Relaxer</Link></li>
 				    <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
+		            
+		            <li><Link to='/user'>Profile</Link></li>
 		            <li><a><SignInComponent /></a></li>
 				</ul>
 				<a href="#" data-activates="slide-out" className="button-collapse"><i className="material-icons">menu</i></a>
@@ -34,5 +43,22 @@ class Header extends React.Component {
 		</nav>
     )}
 };
+
+
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+  }, dispatch);
+}
+
+function mapStateToProps(state) {
+  return { userData: state.userData }
+}
+
+Header = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header)
+
 
 export default Header;

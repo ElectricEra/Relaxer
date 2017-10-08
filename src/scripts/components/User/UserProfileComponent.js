@@ -6,28 +6,33 @@ import DatePicker from "../CommonComponents/DatePicker";
 import ActivitiesComponent from "../CommonComponents/ActivitiesComponent";
 import FoodSwitch from "../CommonComponents/FoodSwitch";
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
+import { addUserData } from "../../actions/index"
+
 import { BasicWrapper } from "../CommonComponents/BasicWrapperComponent";
 
-class UserFormComponent extends React.Component {
+class UserProfileComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-        photoURL: firebase.auth().currentUser ? firebase.auth().currentUser.photoURL : ''
-    }
   }
 
   saveHandler() {
-
+    console.log("Saved!");
   }
 
   render() {
+    let photoURL = this.props.userData ? this.props.userData.photoURL : '';
+    let name = this.props.userData ? this.props.userData.displayName : '';
+    let email = this.props.userData ? this.props.userData.email : '';
     return (
       <div className="row user-form-component">
         <BasicWrapper>
-        <div className="card-panel">
-            <img src={this.state.photoURL}/>
-            <InputComponent id="f-name" type="text" labelText="First Name" />
-            <InputComponent id="l-name" type="text" labelText="First Name" />
+        <div className="card-panel center-align">
+            <img src={photoURL} className="responsive-img"/>
+            <h5>{name}</h5>
+            <h5>{email}</h5>
             <DatePicker id="bd" title="Birth Date" />
             <div className="center-align">
               <div className="waves-effect waves-light blue-background btn center-align"
@@ -38,6 +43,22 @@ class UserFormComponent extends React.Component {
       </div>
     )
   }
-};
+}
 
-export default UserFormComponent;
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addUserData
+  }, dispatch);
+}
+
+function mapStateToProps(state) {
+  return { userData: state.userData }
+}
+
+UserProfileComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserProfileComponent)
+
+export default UserProfileComponent;
