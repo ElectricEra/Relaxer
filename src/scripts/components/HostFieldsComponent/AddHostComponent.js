@@ -27,12 +27,20 @@ class AddHostComponent extends React.Component {
   }
 
   handleSubmit() {
+    console.log(this.props.userData);
     var a = new Date($('#date-start').val())
     var b = new Date($('#date-end').val())
+    var switcher = true;
+    var dates = [];
+    if (a == 'Invalid Date' || b == 'Invalid Date') {
+      switcher = false;
+    } else {
+      dates = [a.toISOString(), b.toISOString()]
+    }
     var obj = {
       price: $('#price').val(),
       living: +$('#amountOfPeople').val() + 1,
-      dates: [a.toISOString(), b.toISOString()],
+      dates,
       activities: [
         $('#filled-in-box0').prop('checked') ? 'trips' : undefined,
         $('#filled-in-box1').prop('checked') ? 'sport' : undefined,
@@ -42,14 +50,14 @@ class AddHostComponent extends React.Component {
       ].filter(a=>!!a),
       gender: $('#gender').val() === 0 ? 'male' : 'female',
       county: $('#country').val(),
-      email: $('#email').val(),
-      name: $('#name').val(),
+      email: this.props.userData.email,
+      name: this.props.userData.displayName,
       food:$('#food-checker').prop('checked'),
       rating: 3,
       picture: this.props.userData.photoURL
     }
     var hosts = firebase.database().ref('hosts/');
-    hosts.push(obj);
+    switcher ? hosts.push(obj) : null;
 }
 
   render() {
@@ -60,7 +68,6 @@ class AddHostComponent extends React.Component {
           <p className="user-find-header center-align">We will register you as a travel host</p>
           <div className="row user-form-component">
             <BasicWrapper>
-              <InputComponent id="name" type="text" labelText="Your name" />
               <DropdownComponent title="Amount of travelers you can host"  id="amountOfPeople" optionList={[1, 2, 3, 4, 5]} classList="input-field col s12" />
               <DatePicker id="date-start" title="Start date"/>
               <DatePicker id="date-end" title="End date"/>
@@ -68,7 +75,6 @@ class AddHostComponent extends React.Component {
               <ActivitiesComponent activitiesList={["trips", "sport", "art", "parties", "local cuisine"]}/>
               <DropdownComponent title="Your gender"  id="gender" optionList={['male', 'female']} classList="input-field col s12" />
               <InputComponent id="country" type="text" labelText="Your country" />
-              <InputComponent id="email" type="text" labelText="Your e-mail" />
               <FoodSwitch title='Food included?' />
             </BasicWrapper>
           </div>
@@ -80,9 +86,6 @@ class AddHostComponent extends React.Component {
             <div className="modal-content center-align">
               <h4>Thanks for becoming a host</h4>
               <p>We hope you will have a great time!</p>
-            </div>
-            <div className="modal-footer">
-              <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
           </div>
         </div>
