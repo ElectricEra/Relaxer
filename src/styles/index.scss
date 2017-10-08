@@ -192,3 +192,23 @@ ul#slide-out {
 #sidenav-overlay {
 	left: 250px;
 }
+
+.small-name {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.card.horizontal {
+	
+	.waves-effect {
+		background-color: #2d4571;
+
+		&:hover {
+			background-color: #576a8d;
+		}
+	}
+
+	.card-image {
+		border-right: 1px solid rgba(160,160,160,0.2);
+	}
+}

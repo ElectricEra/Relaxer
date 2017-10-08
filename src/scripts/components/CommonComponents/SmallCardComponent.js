@@ -34,6 +34,7 @@ class SmallCardComponent extends React.Component {
           <div className="card horizontal">
             <div className="card-image">
               <img className='card-img responsive-img rlx-host-image' src={this.props.host.picture} />
+              <h5 className="small-name">{this.props.host.name}</h5>
             </div>
             <div className="card-stacked">
               <div className="card-content">
