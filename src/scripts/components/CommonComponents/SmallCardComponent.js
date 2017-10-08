@@ -55,7 +55,7 @@ class SmallCardComponent extends React.Component {
                     <HostProfileCompoment host={this.props.host} randIndex={randIndex} />
                   </div>
                   <div className="modal-footer">
-                    <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest}>Send request!</a>
+                    <a className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.sendRequest} href={'mailto:' + this.props.host.email}>Send request!</a>
                     <a className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                   </div>
                 </div>
