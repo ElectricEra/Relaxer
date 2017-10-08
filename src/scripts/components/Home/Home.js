@@ -9,6 +9,7 @@ export default class Home extends React.Component {
   render() {
   	return (
   		<div className="main-title container">
+		{console.log('this user:  ',firebase.auth().currentUser)}
   			<h1 className="main-title__header">Relaxer</h1>
   			<p className="main-title__descr">Your only choice to find best variants for your trips</p>
   			<ul>

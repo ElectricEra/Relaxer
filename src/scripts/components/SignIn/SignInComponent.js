@@ -1,5 +1,12 @@
 import React from 'react'
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+
+import { addUserData } from "../../actions/index"
+
+import { Link } from 'react-router-dom'
+
 class SignInComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -16,11 +23,15 @@ class SignInComponent extends React.Component {
           } else {
               this.setState({isLogged: false});
           }
+          this.props.addUserData(user);
       }.bind(this));
   }
 
+  goToProfile() {
+
+  }
+
   signIn() {
-      console.log('sign in');
     var provider = new firebase.auth.GoogleAuthProvider();
 
      firebase.auth().signInWithRedirect(provider).then(function(result) {
@@ -31,7 +42,6 @@ class SignInComponent extends React.Component {
   }
 
   signOut() {
-      console.log('sign out');
       firebase.auth().signOut();
   }
 
@@ -43,5 +53,20 @@ class SignInComponent extends React.Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addUserData
+  }, dispatch);
+}
+
+function mapStateToProps(state) {
+  return { userData: state.userData }
+}
+
+SignInComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignInComponent)
 
 export default SignInComponent

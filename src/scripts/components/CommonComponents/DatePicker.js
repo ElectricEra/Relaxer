@@ -7,7 +7,7 @@ class DatePicker extends React.Component {
   componentDidMount() {
     $('#' + this.props.id).pickadate({
       selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15, // Creates a dropdown of 15 years to control year,
+      selectYears: 105, // Creates a dropdown of 15 years to control year,
       today: 'Today',
       clear: 'Clear',
       close: 'Ok',
