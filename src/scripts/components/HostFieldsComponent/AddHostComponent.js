@@ -18,6 +18,7 @@ import { updateStoreWithHosts } from '../../actions/index'
 class AddHostComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class AddHostComponent extends React.Component {
 
   handleSubmit() {
     var a = new Date($('#date-start').val())
-    var b = new Date($('#date-end').val())   
+    var b = new Date($('#date-end').val())
     var obj = {
       price: $('#price').val(),
       living: +$('#amountOfPeople').val() + 1,
@@ -49,7 +50,7 @@ class AddHostComponent extends React.Component {
     }
     var hosts = firebase.database().ref('hosts/');
     hosts.push(obj);
-  }
+}
 
   render() {
     return (
@@ -59,11 +60,11 @@ class AddHostComponent extends React.Component {
           <p className="user-find-header center-align">We will register you as a travel host</p>
           <div className="row user-form-component">
             <BasicWrapper>
-              <InputComponent id="name" type="text" labelText="Your name?" />
+              <InputComponent id="name" type="text" labelText="Your name" />
               <DropdownComponent title="Amount of travelers you can host"  id="amountOfPeople" optionList={[1, 2, 3, 4, 5]} classList="input-field col s12" />
               <DatePicker id="date-start" title="Start date"/>
               <DatePicker id="date-end" title="End date"/>
-              <InputComponent id="price" type="text" labelText="Your name?" />
+              <InputComponent id="price" type="text" labelText="Your price" />
               <ActivitiesComponent activitiesList={["trips", "sport", "art", "parties", "local cuisine"]}/>
               <DropdownComponent title="Your gender"  id="gender" optionList={['male', 'female']} classList="input-field col s12" />
               <InputComponent id="country" type="text" labelText="Your country" />
@@ -72,8 +73,8 @@ class AddHostComponent extends React.Component {
             </BasicWrapper>
           </div>
           <div className="center-align">
-            <a className="waves-effect waves-light blue-background btn center-align modal-trigger" 
-               onClick={this.handleSubmit} href="#modal1">Find</a>
+            <a className="waves-effect waves-light blue-background btn center-align modal-trigger"
+               onClick={this.handleSubmit} href="#modal1">Register</a>
           </div>
           <div id="modal1" className="modal">
             <div className="modal-content center-align">
@@ -92,7 +93,7 @@ class AddHostComponent extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    
+
   }, dispatch);
 }
 
