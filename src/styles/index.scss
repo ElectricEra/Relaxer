@@ -24,6 +24,7 @@ body {
 #app {
 	font-family: 'Roboto', sans-serif;
 	margin-bottom: 50px;
+	margin-top: 75px;
 }
 
 footer.page-footer {
@@ -39,6 +40,7 @@ nav {
 	background: #2D4571;
 	position: fixed;
     z-index: 5;
+    top: 0;
 
 	& li div p {
 		padding: 0 20px;
