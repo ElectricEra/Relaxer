@@ -13,6 +13,7 @@ class Header extends React.Component {
 
   componentDidMount() {
   	$(".button-collapse").sideNav();
+
   }
 
 
@@ -34,7 +35,7 @@ class Header extends React.Component {
 		            <li><SignInComponent /></li>
 		        </ul>
 
-		        <ul id="slide-out" className="side-nav" onClick={$('.button-collapse').sideNav('hide')}>
+		        <ul id="slide-out" className="side-nav" onClick={()=>{$('.button-collapse').sideNav('hide')}}>
 			        <li><Link to='/'>JourneyEye</Link></li>
 				    <li><Link to='/app'>Find a host</Link></li>
 		            <li><Link to='/host'>All hosts</Link></li>

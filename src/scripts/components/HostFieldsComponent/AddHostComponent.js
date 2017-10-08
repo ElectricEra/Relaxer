@@ -22,12 +22,15 @@ class AddHostComponent extends React.Component {
   }
 
   componentDidMount() {
-    var hosts = firebase.database().ref('hosts/');
     $('.modal').modal();
   }
 
   handleSubmit() {
-    console.log(this.props.userData);
+    var gender = $('#gender').val();
+    if (gender == 0) 
+      { gender = 'male'} 
+    else if (+gender == 1)
+      { gender ='female' }
     var a = new Date($('#date-start').val())
     var b = new Date($('#date-end').val())
     var switcher = true;
@@ -48,7 +51,7 @@ class AddHostComponent extends React.Component {
         $('#filled-in-box3').prop('checked') ? 'parties' : undefined,
         $('#filled-in-box4').prop('checked') ? 'local cuisine' : undefined
       ].filter(a=>!!a),
-      gender: $('#gender').val() === 0 ? 'male' : 'female',
+      gender,
       county: $('#country').val(),
       email: this.props.userData.email,
       name: this.props.userData.displayName,
@@ -80,12 +83,13 @@ class AddHostComponent extends React.Component {
           </div>
           <div className="center-align">
             <a className="waves-effect waves-light blue-background btn center-align modal-trigger"
-               onClick={this.handleSubmit} href="#modal1">Register</a>
+               onClick={this.handleSubmit} href="#modal2">Register</a>
           </div>
-          <div id="modal1" className="modal">
+
+          <div id="modal2" className="modal modal-fixed-footer">
             <div className="modal-content center-align">
-              <h4>Thanks for becoming a host</h4>
-              <p>We hope you will have a great time!</p>
+              <h4>Thanks for registering</h4>
+              <p>Now your trip can be searched. Have a great visitors!</p>
             </div>
           </div>
         </div>

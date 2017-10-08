@@ -20,7 +20,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-bottom: 50px;
-	min-height: 82vh;
+	min-height: 87vh;
 }
 
 #app {
@@ -256,4 +256,17 @@ ul#slide-out {
 .ico-text-home {
 	font-size: 20px;
 	line-height: 20px;
+}
+
+#modal2 {
+	padding: 0;
+    height: 26%;
+
+    .modal.modal-fixed-footer .modal-content {
+    	height: inherit;
+    }
+}
+
+.modal.modal-fixed-footer .modal-content {
+	height: 100%
 }
