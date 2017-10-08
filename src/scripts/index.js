@@ -20,6 +20,7 @@ import Footer from './components/HeaderFooter/Footer'
 import Home from  './components/Home/Home'
 import HostProfileComponent from  './components/HostFieldsComponent/HostProfileComponent'
 import UserProfileComponent from './components/User/UserProfileComponent'
+import AddHostComponent from './components/HostFieldsComponent/AddHostComponent'
 
 const $app = document.getElementById('app')
 
@@ -38,6 +39,7 @@ ReactDOM.render(
 				<Route path="/host" component={HostListComponent} />
 				<Route path="/sign-in" component={SignInComponent} />
                 <Route path="/user" component={UserProfileComponent} />
+                <Route path='/become-a-host' component={AddHostComponent} />
 				<Footer />
 			</div>
 		</Router>
