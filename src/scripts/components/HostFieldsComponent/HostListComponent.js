@@ -5,6 +5,8 @@ import { BasicWrapper } from "../CommonComponents/BasicWrapperComponent";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
+import { Link } from 'react-router-dom'
+
 import { updateStoreWithHosts } from '../../actions/index'
 
 let host = {
@@ -37,9 +39,19 @@ class HostListComponent extends React.Component {
     });
   }
 
+  compareArrays(arr1, arr2) {
+    for(let i = 0; i<arr1.length; i++) {
+      for(let j = 0; j<arr2.length; j++) {
+        if(arr1[i] === arr2[j]) return true
+      }
+    }
+    return false;
+  }
+
   renderList() {
       let eventsToShow = [];
-
+      console.log("Info: ", this.props.infoForHosts);
+      console.log("Hosts: ", this.state.hostList);
       if(!Object.keys(this.props.infoForHosts).length) {
         this.state.hostList.forEach((event, index)=>{
             eventsToShow.push(<SmallCardComponent key={index} host={event}/>)
@@ -47,10 +59,22 @@ class HostListComponent extends React.Component {
         return eventsToShow;
       }
       this.state.hostList.forEach((event, index)=>{
-        if(event.price < this.props.infoForHosts.price) {
+        if(
+        (event.price < this.props.infoForHosts.price) &&
+          (Date.parse(this.props.infoForHosts.dateStart) > Date.parse(event.dates[0])) &&
+          (Date.parse(this.props.infoForHosts.dateEnd) < Date.parse(event.dates[1]))
+        ) {
           eventsToShow.push(<SmallCardComponent key={index} host={event}/>)
         }
       });
+      if(!eventsToShow.length && this.state.hostList.length) {
+        return (<BasicWrapper>
+          <h3 className="try-again-txt">Nothing found. Please try again</h3>
+          <Link to='/app'>
+            <button className="waves-effect waves-light blue-background btn center-align try-again-btn">Try again</button>
+          </Link>
+        </BasicWrapper>)
+      } else
       return eventsToShow;
   }
 
@@ -58,7 +82,6 @@ class HostListComponent extends React.Component {
     return (
         <BasicWrapper>
           <div className="loading">Loading&#8230;</div>
-          <input type="text" placeholder="Country"/>
           {this.renderList()}
         </BasicWrapper>
     )
