@@ -21,6 +21,9 @@ class UserProfileComponent extends React.Component {
   }
 
   render() {
+    if(!this.props.userData) {
+      window.location.href="http://localhost:3000/"
+    }
     let photoURL = this.props.userData ? this.props.userData.photoURL : '';
     let name = this.props.userData ? this.props.userData.displayName : '';
     let email = this.props.userData ? this.props.userData.email : '';
@@ -37,7 +40,7 @@ class UserProfileComponent extends React.Component {
               <div className="waves-effect waves-light blue-background btn center-align">Become a host</div>
               </Link>
             </div>
-        </div> : <div className="center-align"><h3>Seems like you are not logged in.</h3></div> : <div />}
+        </div> : <div className="center-align login-message"><h3>Seems like you are not logged in.</h3></div> : <div />}
         </BasicWrapper>
       </div>
     )
