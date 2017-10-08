@@ -37,34 +37,37 @@ class HostProfileComponent extends React.Component {
               <span>{this.props.host.name}</span>
             </p>
             <div className="host-profile-page__img"><img src="http://lorempixel.com/600/300/" alt=""/></div>
-            
+
             <div className="host-profile-page__rating">
               {this.renderRatingStars(this.props.host.rating)}
             </div>
           </div>
           <div className="col l2 m1 s0"></div>
         </div>
-          <div className="row center-align">
+          <div className="row center-align profile-list">
             <p className="">
-              <span>Gender: {this.props.host.gender}</span>
+              <span><b>Gender:</b> {this.props.host.gender}</span>
             </p>
             <p className="">
-              <span>Country: {this.props.host.county}</span>
+              <span><b>Country:</b> {this.props.host.county}</span>
             </p>
             <p className="">
-              <span>E-mail: {this.props.host.email}</span>
+              <span><b>E-mail:</b> {this.props.host.email}</span>
             </p>
             <p className="">
-              <span>Strat date: {`${d1d.date}.${d1d.month}.${d1d.year}`}</span>
+              <span><b>Start date:</b> {`${d1d.date}.${d1d.month}.${d1d.year}`}</span>
             </p>
             <p className="">
-              <span>Strat date: {`${d2d.date}.${d2d.month}.${d2d.year}`}</span>
+              <span><b>End date:</b> {`${d2d.date}.${d2d.month}.${d2d.year}`}</span>
             </p>
             <p className="">
-              <span>Food included: {this.props.host.food ? 'yes' : 'no'}</span>
+              <span><b>Food included:</b> {this.props.host.food ? 'yes' : 'no'}</span>
             </p>
             <p className="">
-              <span>Price: {this.props.host.price}</span>
+              <span><b>Price:</b> {this.props.host.price}</span>
+            </p>
+            <p className="">
+              <span><b>Activities:</b> {this.props.host.activities.join(", ")}</span>
             </p>
           </div>
         </div>
