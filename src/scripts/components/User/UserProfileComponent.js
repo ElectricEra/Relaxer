@@ -29,6 +29,7 @@ class UserProfileComponent extends React.Component {
     return (
       <div className="row user-form-component">
         <BasicWrapper>
+        {this.props.userData ? this.props.userData.displayName ?
         <div className="card-panel center-align">
             <img src={photoURL} className="responsive-img"/>
             <h5>{name}</h5>
@@ -38,7 +39,7 @@ class UserProfileComponent extends React.Component {
               <div className="waves-effect waves-light blue-background btn center-align"
                  onClick={this.saveHandler}>Save</div>
             </div>
-        </div>
+        </div> : <div className="center-align"><h3>Seems like you are not logged in.</h3></div> : <div />}
         </BasicWrapper>
       </div>
     )

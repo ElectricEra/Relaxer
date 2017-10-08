@@ -23,10 +23,7 @@ class Header extends React.Component {
 		        <ul id="nav-mobile" className="right hide-on-med-and-down">
 		            <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
-		            {console.log(this.props.currentUser,"sadfsdfds")}
-		            {this.props.userData.currentUser ? 
-		               <li><Link to='/user'>Profile</Link></li> : <li />
-		            }
+		            <li><Link to='/user'>Profile</Link></li> : <li />
 		            <li><SignInComponent /></li>
 		        </ul>
 
@@ -34,7 +31,6 @@ class Header extends React.Component {
 			        <li><Link to='/'>Relaxer</Link></li>
 				    <li><Link to='/app'>App</Link></li>
 		            <li><Link to='/host'>Host</Link></li>
-		            
 		            <li><Link to='/user'>Profile</Link></li>
 		            <li><a><SignInComponent /></a></li>
 				</ul>

@@ -22,14 +22,14 @@ class UserSearch extends React.Component {
       dateStart: $('#date-start').val(), 
       dateEnd: $('#date-end').val(),
       filled: [
-        $('#filled-in-box0').prop('checked'),
-        $('#filled-in-box1').prop('checked'),
-        $('#filled-in-box2').prop('checked'),
-        $('#filled-in-box3').prop('checked'),
-        $('#filled-in-box4').prop('checked')
+        $('#filled-in-box0').prop('checked') ? 'trips' : undefined,
+        $('#filled-in-box1').prop('checked') ? 'sport' : undefined,
+        $('#filled-in-box2').prop('checked') ? 'art' : undefined,
+        $('#filled-in-box3').prop('checked') ? 'parties' : undefined,
+        $('#filled-in-box4').prop('checked') ? 'local cuisine' : undefined
       ]
     }
-
+    console.log(obj);
     this.props.addUserPreferances(obj);
   }
 

@@ -21,7 +21,7 @@ class UserFormComponent extends React.Component {
           <DropdownComponent title="Amount of travelers"  id="amountOfPeople" optionList={[1, 2, 3, 4, 5]} classList="input-field col s12" />
           <DatePicker id="date-start" title="Start date"/>
           <DatePicker id="date-end" title="End date"/>
-          <ActivitiesComponent activitiesList={["excursions", "trips", "parties", "local food", "museums"]}/>
+          <ActivitiesComponent activitiesList={["trips", "sport", "art", "parties", "local cuisine"]}/>
         </BasicWrapper>
       </div>
     )
